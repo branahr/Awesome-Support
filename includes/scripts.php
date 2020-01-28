@@ -97,7 +97,7 @@ function wpas_register_assets_back_end() {
 	$load_bs4  = wpas_get_option('load_bs4_files_be', '0') ;	
 	if ( '1' === $load_bs4 ) {
 		wpas_register_bs4_theme_styles();
-		wp_register_script( 'wpas-bootstrap-4-popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js', array( 'jquery' ), '1.11.0', true );
+		wp_register_script( 'wpas-bootstrap-4-popper', WPAS_URL . 'assets/public/js/popper.js', array( 'jquery' ), '1.11.0', true );
 		wp_register_script( 'wpas-bootstrap-4-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', array( 'jquery' ), '4.0.0', true );
 	}	
 	if ( '2' === $load_bs4 ) {
@@ -109,7 +109,7 @@ function wpas_register_assets_back_end() {
 	
 	// Other 3rd party styles
 	wp_register_style( 'wpas-datepicker', WPAS_URL . 'assets/public/css/component_datepicker.css', null, WPAS_VERSION, 'all' ); // NOTE: This asset is duplicated in the back-end
-	wp_register_style( 'wpas-simple-hint', 'https://cdn.jsdelivr.net/simple-hint/2.1.1/simple-hint.min.css', null, '2.1.1' );
+	wp_register_style( 'wpas-simple-hint', WPAS_URL . 'assets/admin/css/simple-hint.min.css', null, '2.1.1' );
 	if ( intval( $load_bs4 ) <= 0 ) {	
 		wp_register_style( 'wpas-flexboxgrid', WPAS_URL . 'assets/admin/css/vendor/flexboxgrid.min.css', null, '6.2.0', 'all' );	
 	}
