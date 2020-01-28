@@ -1239,7 +1239,7 @@ function wpas_get_users_ajax( $args = array() ) {
 		$args = array();
 		foreach ( $defaults as $key => $value ) {
 			if ( isset( $_POST[ $key ] ) ) {
-				$args[ $key ] = $_POST[ $key ];
+				$args[ $key ] = sanitize_key($_POST[ $key ]);
 			}
 		}
 	}
